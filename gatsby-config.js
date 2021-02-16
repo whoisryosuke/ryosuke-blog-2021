@@ -10,6 +10,20 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
+        name: `blog`,
+        path: `${__dirname}/content/blog/`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `portfolio`,
+        path: `${__dirname}/content/portfolio/`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
         name: `images`,
         path: `${__dirname}/src/images`,
       },
@@ -32,7 +46,9 @@ module.exports = {
       resolve: `gatsby-plugin-mdx`,
       options: {
         defaultLayouts: {
-          default: require.resolve(`./src/components/layout.js`),
+          default: require.resolve(`./src/layouts/MdxPage.js`),
+          blog: require.resolve(`./src/layouts/MdxBlog.js`),
+          portfolio: require.resolve(`./src/layouts/MdxPortfolio.js`),
         },
       },
     },
