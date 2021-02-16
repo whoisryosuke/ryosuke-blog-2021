@@ -1,8 +1,23 @@
 import React from "react"
 import styled from "styled-components"
-import { space, layout, background, flexbox } from "styled-system"
+import {
+  space,
+  layout,
+  background,
+  flexbox,
+  SpaceProps,
+  LayoutProps,
+  BackgroundProps,
+  FlexboxProps,
+} from "styled-system"
 
-const Flex = styled.div`
+export type FlexProps = SpaceProps &
+  LayoutProps &
+  BackgroundProps &
+  FlexboxProps & {
+    children: React.ReactChild
+  }
+const Flex = styled.div<FlexProps>`
   ${space}
   ${layout}
   ${background}

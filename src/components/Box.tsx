@@ -1,8 +1,24 @@
 import React from "react"
 import styled from "styled-components"
-import { space, layout, background, position } from "styled-system"
+import {
+  space,
+  layout,
+  background,
+  position,
+  SpaceProps,
+  LayoutProps,
+  BackgroundProps,
+  PositionProps,
+} from "styled-system"
 
-const Box = styled.div`
+export type BoxProps = SpaceProps &
+  LayoutProps &
+  BackgroundProps &
+  PositionProps & {
+    children: React.ReactChild
+  }
+
+const Box = styled.div<BoxProps>`
   ${space}
   ${layout}
   ${background}

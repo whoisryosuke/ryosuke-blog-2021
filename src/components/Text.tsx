@@ -1,8 +1,13 @@
 import React from "react"
 import styled from "styled-components"
-import { typography, color } from "styled-system"
+import { typography, color, TypographyProps, ColorProps } from "styled-system"
 
-const Text = styled.div`
+export type TextProps = TypographyProps &
+  ColorProps & {
+    children: React.ReactChild
+  }
+
+const Text = styled.div<TextProps>`
   ${typography}
   ${color}
 `
