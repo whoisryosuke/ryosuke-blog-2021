@@ -2,6 +2,10 @@
     "include": [
         "./src/**/*"
     ],
+    "exclude": [
+        "node_modules/*",
+        "public/*"
+    ],
     "compilerOptions": {
         "target": "esnext",
         "module": "esnext",
@@ -13,6 +17,10 @@
         // "checkJs": true,
         "jsx": "react",
         "strict": true,
+        "moduleResolution": "node",
+        "rootDirs": [
+            "src"
+        ],
         "esModuleInterop": true,
         "experimentalDecorators": true,
         "emitDecoratorMetadata": true,
